@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+
+runs/
+logs/
+outputs/
+*.log
+
+data/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
