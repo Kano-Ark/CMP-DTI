@@ -627,16 +627,9 @@ def seed_torch(seed):
 
 if __name__ == '__main__':
     seed_torch(SEED)
-    task = 'drugbank'   # select from 'drugbank', 'bindingdb' and 'dtinet'
-    #task = 'kiba'  # select from 'drugbank', 'bindingdb' and 'dtinet'
-    #task = 'bindingdb'  # select from 'drugbank', 'bindingdb' and 'dtinet'
+    task = 'drugbank'   # select from 'drugbank', 'bindingdb' 
+    #task = 'bindingdb'  # select from 'drugbank', 'bindingdb' 
     #confi = 'confi60'
-    # parser = argparse.ArgumentParser(description='train and test set')
-    # parser.add_argument('--task', type=str, default='drugbank', help='task name')
-    # parser.add_argument('--path', type=str, default='', help='file name')
-    # args = parser.parse_args()
-    # task = args.task
-    # path = args.path
     # 将所有的药物和蛋白所需数据读入内存中方便后续快速取用，确保针对每种药物/蛋白只处理一次
     fold = 0
     print('FOLD:', fold)
@@ -768,7 +761,7 @@ if __name__ == '__main__':
             max_spe = val_metrics[4]
             best_model = model
             print('Get a better performance! Max_AUC = ' + str(max_auc) + ' and Max_AUPR = ' + str(val_metrics[1]) + '\nACC SEN SPE = ' + str(max_acc) +' '+ str(max_sen) +' '+ str(max_spe))
-    torch.save(best_model.state_dict(), 'models/esm_' + task + '3.pth')
+    torch.save(best_model.state_dict(), 'models/esm_' + task + '.pth')
     # np.savetxt('only_structure/loss_' + task + '.csv', loss_list)
-    print('kiba：max_auc = '+str(max_auc)+' max_acc = '+ str(max_acc))
+    print('drugbank：max_auc = '+str(max_auc)+' max_acc = '+ str(max_acc))
     print(fold)
