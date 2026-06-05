@@ -1,6 +1,6 @@
-# LG-PCNet
+# CMP-DTI
 
-Here is the code for paper **LG-PCNet: Multichannel Local–Global Collaborate from Molecular Point Clouds for Drug–Target Interaction Prediction**.
+Here is the code for paper **CMP-DTI: Cross-Modal Molecular Point Cloud Fusion for Drug--Target Interaction Prediction**.
 
 # System Requirements
 
