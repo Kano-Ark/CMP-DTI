@@ -48,6 +48,9 @@ CMP-DTI/
 ├── LICENSE
 ├── requirements.txt
 ├── dataset/
+│   ├──drugbank/
+│   │   ├──log_cv1.txt
+│   │   └──readme.md
 │   ├── download.py
 │   ├── drug3d.py
 │   ├── esm2.py
@@ -78,4 +81,6 @@ with open('dataset/' + task + '/result/cold_start_protein/test_proten_cold.csv')
 with open('dataset/' + task + '/result/cold_pair/train_cold_pair.csv') as f1:  #647
 with open('dataset/' + task + '/result/cold_pair/test_cold_pair.csv') as f1:  #717
 ```
+The implementation details of the *drugbank* dataset *cv1* can be found in the *log_cv1.txt* and *readme.md* files located in the folder *dataset/drugbank/*.
+
 
