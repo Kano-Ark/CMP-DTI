@@ -55,3 +55,27 @@ CMP-DTI/
 │   └── 3dnormal.py
 ├── main.py
 ├── utils.py
+```
+
+## 3. Train
+Useing
+```bash
+python main.py
+```
+The default dataset is Drugbank. You can change the dataset by modifying the area around line 630 in the *main.py* code.
+There are also lines 647 and 717 that perform a cold start.
+```python
+#warm
+with open('dataset/' + task + '/result/CV5/train_cv0.csv') as f1:  #647
+with open('dataset/' + task + '/result/CV5/test_cv0.csv') as f1:  #717
+#cold drug
+with open('dataset/' + task + '/result/cold_start_drug/train_drug_cold.csv') as f1:  #647
+with open('dataset/' + task + '/result/cold_start_drug/test_drug_cold.csv') as f1:  #717
+#cold protein
+with open('dataset/' + task + '/result/cold_start_protein/train_protein_cold.csv') as f1:  #647
+with open('dataset/' + task + '/result/cold_start_protein/test_proten_cold.csv') as f1:  #717
+#cold pair
+with open('dataset/' + task + '/result/cold_pair/train_cold_pair.csv') as f1:  #647
+with open('dataset/' + task + '/result/cold_pair/test_cold_pair.csv') as f1:  #717
+```
+
