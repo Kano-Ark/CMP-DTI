@@ -14,7 +14,44 @@ scikit_learn==1.3.2
 
 rdkit==2023.9.2
 
-# Training
+## 1. Overview
 
-You can use main.py to train the model with dataset. 
+CMP-DTI represents drugs and proteins using multiple complementary modalities.
 
+### Drug representations
+
+- SMILES sequence
+- Atomic three-dimensional coordinates
+- Atomic connectivity matrix
+- Pairwise atomic distance matrix
+
+### Protein representations
+
+- Protein sequence features extracted by ESM-2
+- Residue-level C-alpha structural representation derived from AlphaFold structures
+- Sequence-adjacency protein graph
+
+The modality-specific representations are encoded separately and subsequently integrated for binary drug–target interaction prediction.
+
+**Important:** CMP-DTI does not use a docked drug–protein complex as model input and does not explicitly construct atom–residue contact maps or binding-pocket representations.
+
+---
+
+## 2. Repository Structure
+
+The recommended repository structure is:
+
+```text
+CMP-DTI/
+│
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── dataset/
+│   ├── download.py
+│   ├── drug3d.py
+│   ├── esm2.py
+│   ├── seq2graph.py
+│   └── 3dnormal.py
+├── main.py
+├── utils.py
