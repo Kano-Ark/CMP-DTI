@@ -590,6 +590,8 @@ class PreNetMLP(nn.Module):
         super(PreNetMLP, self).__init__()
         self.d_c = DrugCoding()
         self.p_c = ProteinCoding()
+        self.alpha = nn.Parameter(torch.tensor(0.5))  # epg权重
+        self.beta = nn.Parameter(torch.tensor(0.5))   # epp权重
         self.fc1 = nn.Linear((smiles_output_dim + bert_output_dim)*2, 1024)
         self.fc2 = nn.Linear(1024, 256)
         self.fc3 = nn.Linear(256, 2)
@@ -600,8 +602,8 @@ class PreNetMLP(nn.Module):
         eds, edi = self.d_c(d_s, d_i)
         epb, epp, epg = self.p_c(p_b, p_p, p_g)
 
-        self.alpha = nn.Parameter(torch.tensor(0.5))  # epg权重
-        self.beta = nn.Parameter(torch.tensor(0.5))   # epp权重
+        #self.alpha = nn.Parameter(torch.tensor(0.5))  # epg权重
+        #self.beta = nn.Parameter(torch.tensor(0.5))   # epp权重
         e_protein = self.alpha * epp + self.beta * epg
         #e=torch.cat((eds, epb,epg), dim=1)
         #e=torch.cat((edi, epp,epg), dim=1)
