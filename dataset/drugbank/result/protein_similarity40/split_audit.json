@@ -1,0 +1,23 @@
+{
+  "alignment": "Biopython PairwiseAligner local",
+  "match_score": 2.0,
+  "mismatch_score": -1.0,
+  "gap_open": -5.0,
+  "gap_extend": -0.5,
+  "identity_denominator": "alignment columns including internal gaps",
+  "coverage_definition": "paired residues / full protein length on both sides",
+  "min_identity": 0.4,
+  "min_coverage": 0.8,
+  "protein_pairs": 10683753,
+  "aligned_pairs": 2079446,
+  "length_filter_skips": 8604265,
+  "threshold_edges": 1547,
+  "grouping_entity": "protein",
+  "num_groups": 3710,
+  "target_test_fraction": 0.2,
+  "number_of_splits": 5,
+  "seed": 3142,
+  "candidate_partitions": 400,
+  "group_overlap": 0,
+  "DTI_pair_overlap": 0
+}
