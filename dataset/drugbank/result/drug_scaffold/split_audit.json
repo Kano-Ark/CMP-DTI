@@ -1,0 +1,27 @@
+{
+  "source_files": [
+    "dataset\\drugbank\\result\\CV5\\test_cv0.csv",
+    "dataset\\drugbank\\result\\CV5\\test_cv1.csv",
+    "dataset\\drugbank\\result\\CV5\\test_cv2.csv",
+    "dataset\\drugbank\\result\\CV5\\test_cv3.csv",
+    "dataset\\drugbank\\result\\CV5\\test_cv4.csv",
+    "dataset\\drugbank\\result\\CV5\\train_cv0.csv",
+    "dataset\\drugbank\\result\\CV5\\train_cv1.csv",
+    "dataset\\drugbank\\result\\CV5\\train_cv2.csv",
+    "dataset\\drugbank\\result\\CV5\\train_cv3.csv",
+    "dataset\\drugbank\\result\\CV5\\train_cv4.csv"
+  ],
+  "input_rows": 187850,
+  "unique_pairs": 37570,
+  "duplicates_removed": 150280,
+  "method": "Bemis-Murcko scaffold; ringless molecules grouped together",
+  "group_entity": "drug",
+  "group_count": 3159,
+  "largest_group_pair_count": 6494,
+  "test_ratio_requested": 0.2,
+  "repeats": 5,
+  "seed_start": 3142,
+  "candidate_attempts": 250,
+  "group_overlap_check": "passed",
+  "pair_overlap_check": "passed"
+}
