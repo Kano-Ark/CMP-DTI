@@ -199,8 +199,9 @@ class DrugPointCoding(nn.Module):
         h = self.proj(h)            # (B, N, D)
 
         # 距离/上下文 -> (B, N, D)
-        dist_feat = self.dist_encoder(d_d.unsqueeze(-1)).mean(dim=2)
-        ctx_feat  = self.ctx_encoder(d_c.unsqueeze(-1)).mean(dim=2)
+        dist_feat = F.gelu(self.dist_encoder(d_d.unsqueeze(-1))).mean(dim=2)
+
+        ctx_feat = F.gelu(self.ctx_encoder(d_c.unsqueeze(-1))).mean(dim=2)
         struct_feat = dist_feat + ctx_feat
 
         # ========= 基础节点 Cross-Attn 融合 =========
